@@ -1,0 +1,60 @@
+Alright!.
+
+Vấn đề bây giờ là như này, mình đã hiểu những gì cần phải làm cho cái project bigdata này rồi.
+
+Thì ngay từ ban đầu thầy đã nói làm về phân tích, xử lý dữ liệu lớn, và môn này sẽ sử dụng tool là chủ yếu, xử lý 1 bộ dữ liệu lớn về kích thước có thể 3-5GB hoặc 1 bài toán dữ liệu lớn, tức là cái tính chất của dữ liệu nó liên kết phức tạp khó sử lý mặc dù khối lượng dữ liệu cũng không lớn lắm. mà là Bài toán bên trong cần giải quyết nó phức tạp, có thể phình to ngoài ý muốn.
+
+Thì mình đã chọn được đề tài rồi, ban đầu cx không hiểu đâu, nhưng mà sau khi chọn được bộ dataset thì cx ngẫm dc 1 chút rồi, bộ dataset mình chọn là Yelp Review, nó thu thập những review của Yelp gì đó, nói chung là review, cỡ 5gb gì đó, nhưng mà trong bộ dataset có nhiều file, mình cần phân tích hết chúng nó lại.
+
+
+Sử dụng Spark để data analysis cái dataset đó, đọc rồi, trực quan hóa, phân tích, ML workflow dự đoán các kiểu thôi, ko thể phân tích xong để đấy được.phải modeling dữ liệu chứ
+
+
+Quay lại cái project nào.
+preprocessing
+Sử dụng cả apriori để phân tích
+rồi trực quan hóa
+*ML để modeling
+*deep 1 chút cx đc, chắc chắn cái Mblib kia thả nào chả support neural net.
+
+
+
+Spark vs MLlib
+Khai phá luật, apriori, khi dữ liệu đủ lớn thì ms apriori đc
+
+
+Chỉ đơn giản với ý tưởng tìm ra luật phổ biến trong tập dữ liệu thôi
+mà có thể ứng dụng vào rất nhiều  ngành, y tế, mua sắm, xu hướng.
+
+Hay có thể nói cách khác là rất nhiều bài toán có thể được quy về bài toán tìm tập phổ biến (most frequent items)
+
+
+
+
+3 cái thuật toán phổ biến:
+brute force algo (too slow)
+apriori (little advanced)
+FP-Growth (supported in MLlib) (advanced) : sử dụng cấu trúc cây
+
+Sinh ra Association Rules
+
+thuật toán llaf cách ra đc AR thôi
+còn sau khi ra dược cái AR đó thì suy ngược ra actionable insight kiểu gì ms quan trọng.
+
+
+
+
+
+
+
+Khi mà làm project ấy  thì thầy bảo phải up hết mọi thứ lên trê Hadoop để nó quản lý file lớn, khởi động 2 cái máy ảo để có thêm core, bật Pyspark lên để lấy API interface, rồi tạo 1 cái notebook trên jupyter notebook, thực hiện mọi thao tác trên đó. Và cái cuối cùng mình nhét vào reppo là cái notebook đó, xong xuôi mọi chuyện thì mới có thể delete em nó được.
+
+sử dụng spark để phân tích cái dataset chết khiếp này.
+
+
+
+
+
+
+
+

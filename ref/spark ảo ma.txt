@@ -1,0 +1,34 @@
+Cái note này note lại các quy trình mà mình cần phải chạy để có được 
+
+cái spark rồi là jupyter note book
+
+Quy trình phải nói là ảo ma ca na đa luôn
+
+Ban dầu bật cái hadoop lên, cho nó có HDFS
+
+rồi sau đó vào cái thư mục /usr/local/spark rồi sbin/start để chạy spark
+
+sau khi có server spark chạy rồi
+
+thì dùng lệnh pyspark để run 1 con jupiter lên,
+
+ngay tại current folder.
+
+rồi có jupiter rồi có notebook
+
+
+và mới làm bài đc
+
+
+đọc file thì đọc từ HDFS file,
+
+file phải đẩy lên hadoop thì spark mới đọc được.
+
+
+ảo ma luôn.
+
+
+
+
+
+
