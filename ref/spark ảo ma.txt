@@ -32,3 +32,6 @@ file phải đẩy lên hadoop thì spark mới đọc được.
 
 
 
+
+
+
