@@ -1,0 +1,94 @@
+Câu hỏi rất hay — và đúng là ít ai để ý điều này.
+Nếu nói một cách công bằng: bộ dữ liệu Yelp là một trong những tập dữ liệu “vừa quý vừa nguy hiểm” nhất trong giới phân tích dữ liệu thực tế.
+Để mình lý giải thật kỹ, dưới góc nhìn của một chuyên gia dữ liệu lớn:
+
+🧠 1️⃣ Tại sao bộ dữ liệu Yelp quý giá đến vậy
+(1) Dữ liệu “real-world”, không phải dạng clean & toy
+
+Khác với Titanic, Iris, hay MovieLens — Yelp chứa:
+
+Hàng triệu bản ghi thực (review, business, user, rating, ảnh, checkin,…)
+
+Có mối quan hệ phức tạp giữa các bảng (user → review → business)
+
+Bao phủ đa miền dữ liệu: text, location, time-series, social interaction, sentiment
+
+Đây là một sandbox dữ liệu thật cho sinh viên, nhà nghiên cứu, và chuyên gia muốn thử nghiệm các thuật toán học máy, xử lý ngôn ngữ, recommendation, hoặc big data processing.
+
+👉 Bạn có thể xem nó như một “Wikipedia cho ngành Data Science” – chứa mọi kiểu dữ liệu mà một kỹ sư dữ liệu cần va chạm trong đời thật.
+
+(2) Hiếm có bộ dữ liệu review nào đạt độ “sâu và rộng” như Yelp
+Thuộc tính	Mức độ
+Số review	> 8 triệu
+Số doanh nghiệp	~200.000
+Số người dùng	~1,5 triệu
+Dung lượng	~9GB JSON raw
+Cấu trúc thông tin	Có cả user.json, review.json, business.json, checkin.json, photo.json
+Đa ngôn ngữ, đa khu vực	Từ Mỹ, Canada, UK, Đức, v.v.
+Cập nhật thật (không mô phỏng)	Yelp chỉ xuất bản bản snapshot thực từ hệ thống thật của họ
+Vì vậy, nó là bộ dữ liệu thực tế hiếm hoi được một công ty lớn (Yelp Inc.) cho phép sử dụng công khai có điều kiện.
+
+(3) Tính ứng dụng rộng
+Bạn có thể dùng bộ này cho hầu hết các bài toán Machine Learning:
+🔍 Sentiment Analysis — phân tích cảm xúc trong review
+📍 Recommendation System — gợi ý nhà hàng phù hợp
+🧾 Topic Modeling — trích xuất chủ đề phổ biến trong phản hồi
+📊 Big Data Analytics (Spark, Hadoop) — xử lý song song dữ liệu lớn
+💬 NLP — tokenization, lemmatization, entity extraction
+🧠 Deep Learning — embedding, BERT sentiment classification
+📈 Data Visualization / Storytelling — hiểu thị trường, hành vi người tiêu dùng
+Nó giống như “một mỏ vàng” để khai thác insight thật cho business.
+
+⚠️ 2️⃣ Nhưng đồng thời, nó cũng nguy hiểm và nhạy cảm
+(1) Dữ liệu chứa nội dung người dùng thật
+
+Các review đều do người thật viết, có:
+
+Ngữ điệu cảm xúc, thậm chí xúc phạm hoặc phân biệt đối xử.
+
+Thông tin nhạy cảm (địa điểm, tên người, ảnh).
+→ Vì thế, nếu bạn vô tình public lại nội dung đó, có thể vi phạm luật bảo vệ dữ liệu cá nhân (GDPR/CCPA).
+
+(2) Yelp bảo vệ thương hiệu cực kỳ chặt
+
+Họ không cho phép:
+
+Dùng dataset này để huấn luyện AI thương mại (vd: chatbot gợi ý nhà hàng).
+
+Hiển thị review công khai trên website/app khác.
+
+Chia sẻ dataset trên GitHub, Google Drive, Kaggle,…
+(Nhiều repo từng bị xóa do vi phạm điều khoản này.)
+
+(3) Có điều khoản “Audit quyền sử dụng”
+
+Trong file bạn tải, Yelp ghi rõ:
+
+“Yelp may request information about, review, audit, and/or monitor your use of the Data at any time…”
+
+Tức là họ có quyền kiểm tra nếu bạn dùng sai mục đích hoặc chia sẻ sai phạm vi.
+
+🔒 3️⃣ Vì sao được coi là “hiếm”
+
+Yelp hiếm khi cấp phép công khai dataset ở quy mô như vậy (đa phần các tập dữ liệu lớn hiện nay đều chỉ có bản rút gọn hoặc giả lập).
+
+Nó có cấu trúc rất đầy đủ cho các dự án ML thật — nên được các trường đại học lớn (Stanford, Berkeley, CMU, v.v.) dùng để dạy môn Applied Machine Learning / Data Mining.
+
+Các công ty thường phải trả tiền rất cao để có được tập dữ liệu tương đương về quy mô và độ phong phú.
+
+💡 4️⃣ Tóm lại
+Mức độ	Nhận xét
+Giá trị học thuật	Cực cao — bao quát NLP, recommendation, big data
+Khả năng ứng dụng	Thực tế — mô phỏng toàn bộ hệ thống data analytics cho doanh nghiệp
+Rủi ro pháp lý	Cao — nếu dùng sai mục đích hoặc public dữ liệu gốc
+Độ hiếm	Rất hiếm — một trong số ít dataset “thật” của doanh nghiệp lớn được công khai có điều kiện
+✍️ Quan điểm cá nhân
+
+Theo mình, Yelp Dataset chính là “cánh cửa bước vào thế giới thật” của dân học Data.
+Nó giúp ta hiểu dữ liệu thực phức tạp và lộn xộn thế nào — và dạy bạn cách làm việc như một Data Scientist thực thụ.
+
+Nhưng đồng thời, nó cũng nhắc nhở rằng: dữ liệu thật luôn đi kèm trách nhiệm thật.
+Biết tôn trọng và tuân thủ giới hạn là cách bạn thể hiện sự chuyên nghiệp của một người làm khoa học dữ liệu.
+
+Nếu bạn muốn, mình có thể chỉ rõ những điểm nhạy cảm trong từng file JSON (review, user, business) để bạn biết phần nào nên ẩn hoặc lọc khi public report (để “an toàn pháp lý” mà vẫn đủ dùng trong bài tập).
+Bạn có muốn mình phân tích phần đó luôn không?

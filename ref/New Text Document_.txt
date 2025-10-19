@@ -1,0 +1,84 @@
+Oke, trước tiên note 1 chút về bộ dữ liệu này và những gì mình sẽ làm
+(Thực ra đọc cũng được thôi, nhưng cứ phải viết ra thì mới thấu được lâu hơ, chả hiểu sao nữa.
+Dùng ngôn từ của mình nó dễ hiểu, và đọc nó cx mượt hơn nữa.)
+
+Oke trước tiên thì bộ dữ liệu này rất giá trị, thực sự, nó bao gồm các đánh giá về nhà hàng trên 7 quốc gia
+Hàn, Nhật, Ý, Việt, Trung, Pháp, Thái.
+
+Và từ cái dataset này mình có thể làm được rất nhiều thứ ấy nha, 
+Bài toán recommendation cũng có,
+Analysis cũng có
+Big Data cũng có, Sentiment Analysis cũng có.
+
+Và mình nghĩ trên Kaggle sẽ đủ thứ cho mình làm với cái dataset này luôn ấy chứ. 
+
+Quay lại bên trên thì bộ data này quý, giá trị ở chỗ nào.
+Thì bộ dataset này là từ Yelp 1 nền tảng đánh giá, nơi để user vào review về những cửa hàng, rating cho những người khác xem trước, kiểu như 1 nơi để mọi người đóng góp review của mình vậy.	
+
+Chỉ được sử dụng cho học thuật, không được phép sử dụng cho mục đích thương mại. (Dùng dataset này để huấn luyện AI thương mại (vd: chatbot gợi ý nhà hàng).)
+
+Không được bán, chia sẻ công khai dữ liệu gốc.
+Được phép tải nhưng ai tải về thì người đấy dùng 1 mình thôi, ko được công khai ra public
+Nghiên cứu phi thương mại.
+
+Mọi sản phẩm được sinh ra (Derivative Work) vẫn thuộc quyền kiểm soát của Yelp.
+
+Dataset có cấu trúc gồm nhiều file .json
+
+Tổng cỡ hơn 5GB (Hơn 8M reviews)
+
+Không thể load lên bằng Pandas được, trừ khi máy có hơn 32GB Ram
+Còn ko phải dùng đến Spark để xử lý phân tán.
+
+
+
+
+Rất ít công ty có thể chịu làm điều này, và nếu ở ngoài thực tế thì để có được 1 bộ dữ liệu phong phú và  thực tế như này thì sẽ mất rất nhiều tiền.
+Vì công ty họ rất đảm bảo quyền riêng tư, dữ liệu của người dùng mà.
+
+Bản agreement đo Yelp công bố như 1 bản hợp đồng thực tế với đối tác thực sự. 
+Điều khoản rất rõ ràng, được phép sử dụng cho mục đich nghiên cứu, học thuật, không được thương mại hóa.
+
+
+Nó là data ethical, đạo đức dữ liệu rất nghiêm ngặt
+
+Hơn 8 triệu review thực tế
+Cực kỳ hiếm có dataset NLP nào ở quy mô tương đương mà hợp pháp
+Có quan hệ nhiều-nhiều giữa user–business
+Phù hợp cho bài toán Recommendation thật
+
+Trong khi nhiều nền tảng mạng xã hội hoặc website review khác từng bị chỉ trích vì lộ dữ liệu người dùng, Yelp chọn cách:
+
+Cho phép nghiên cứu khoa học (để AI/ML phát triển),
+
+Nhưng vẫn bảo vệ quyền riêng tư và quyền sở hữu nội dung của người dùng.
+Yelp chọn mở dữ liệu tiên phong opensource có license pháp lý
+
+Họ muốn cộng đồng học thuật, khai thác insight chứ ko phải khai thác người dùng.
+“Hãy để bạn học từ dữ liệu thực, nhưng đừng quên rằng đằng sau mỗi dòng dữ liệu là con người thật.”
+
+
+Cá nhân mình thấy, chính vì triết lý này mà Yelp Dataset trở thành “thánh địa thực tập” cho mọi sinh viên data:
+Nó vừa giúp bạn học kỹ năng Big Data, NLP, EDA thực chiến,
+Vừa rèn luyện ý thức về bảo mật và quyền riêng tư — điều mà ngành AI đang rất thiếu.
+
+
+
++---------+            +---------+            +---------+
+|  USER   |1--------∞  | REVIEW  |∞--------1  | BUSINESS|
+| user_id |            |review_id|            |bus_id   |
++---------+            +---------+            +---------+
+   |                       |  ^                   |
+   |                       |  |                   |
+   |                       |  |                   |
+   |                       v  |                   v
+   |                    +-------+             +--------+
+   |                    |  TIP  |             |CHECKIN |
+   |                    +-------+             +--------+
+   |                       |
+   |                       v
+   |                    +-------+
+   |                    |PHOTO  |
+   |                    +-------+
+
+
