@@ -82,3 +82,14 @@ Vừa rèn luyện ý thức về bảo mật và quyền riêng tư — điều
    |                    +-------+
 
 
+Còn cái file notebook. sentiment với recommendation kia thì cơ bản là cái outline như này.
+
+Cái notebook đấy tập trung vào xử lý Business và Review 
+Clean 2 cái file này trước xong sau đó join lại rồi phân tích review
+neagtive positive từ đó rank các business theo các khu vực, quốc gia
+có 7 countries được analyze thì phải.
+Xong sau đó đưa ra recommendation bằng report
+
+chứ ko có recommendation system ở đây đâu.
+
+
