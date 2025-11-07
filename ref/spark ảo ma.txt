@@ -19,7 +19,7 @@ rồi có jupiter rồi có notebook
 
 và mới làm bài đc
 
-
+\
 đọc file thì đọc từ HDFS file,
 
 file phải đẩy lên hadoop thì spark mới đọc được.
